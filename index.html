@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height: 300px;
+				font-size: 50px;
+				color: fuchsia;
+				text-align: center;
+				line-height: 100px;
+				position: relative;
+				background: url(img/10.jpg) no-repeat;
+				top: 130px;
+				left: 50%;
+				margin-left: -150px;
+				transition: all 6000s ease;
+				transform-origin: center center 0; 
+				transform: perspective(800px) rotateX(-34deg) rotateY(0deg);
+				transform-style: preserve-3d;
+			}
+			#box img{
+				width: 195px;
+				height: 300px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		<script>
+			onload = function(){
+				var box = document.querySelector("#box");
+				var audio = document.querySelector("#audio");
+				var oimg = box.querySelectorAll("img");
+				var jiaodu = 360/oimg.length;
+				for(var i=0;i<oimg.length;i++){
+					oimg[i].style.transform = "rotateY("+i*jiaodu+"deg) translateZ(350px)";
+					box.style.transform ="perspective(8000px) rotateX(5400deg) rotateY(360000deg)";
+					audio.play();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">I<br />❤<br />You<br />
+			<img src="img/1.jpg" />
+			<img src="img/2.jpg" />
+			<img src="img/3.jpg" />
+			<img src="img/4.jpg" />
+			<img src="img/5.jpg" />
+			<img src="img/6.jpg" />
+			<img src="img/7.jpg" />
+			<img src="img/8.jpg" />
+			<img src="img/9.jpg" />
+		</div>
+		<audio id="audio" src="audio/三輪学 - Old Memory.mp3"></audio>
+	</body>
+</html>
